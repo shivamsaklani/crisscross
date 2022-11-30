@@ -1,0 +1,47 @@
+#include<stdio.h>
+int transpose();
+int i,j,n,m;
+int a[5][5];
+int tra[5][5];
+
+int main(){
+    printf("please enter the row and coloum of a square matrix");
+    scanf("%d %d",&n ,&m);
+    for(i=0;i<n;++i){
+    for(j=0;j<m;++j){
+        printf("Enter element a%d%d: ", i + 1, j + 1);
+        scanf("%d",&a[i][j]);
+        }
+        }
+    //for print
+    for(i=0;i<n;++i){
+    for(j=0;j<m;++j){
+            printf("%d",a[i][j]);
+            if (j == m- 1){
+            printf("\n");}
+        }
+    }
+    transpose();
+    return 0;
+    }
+int transpose(){
+    //comparing transpose
+    for (i = 0; i < n; ++i){
+    for (j = 0; j < m; ++j) {
+    tra[j][i] = a[i][j];
+  }
+  }
+    //printing transpose
+    printf("Transpose is\n");
+    for (i = 0; i < m; ++i){
+    for (j = 0; j < n; ++j) {
+    printf(" %d",tra[i][j]);
+    if(j==n-1){
+        printf("\n");
+    }
+  }
+  }
+    
+    return 0;
+
+}
